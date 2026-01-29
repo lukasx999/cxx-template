@@ -8,4 +8,7 @@ set(CMAKE_COLOR_DIAGNOSTICS ON)
 project(Template)
 
 add_executable(template main.cc)
-target_compile_options(template PRIVATE -Wall -Wextra -O3 -ggdb)
+
+if (UNIX)
+    target_compile_options(template PRIVATE -Wall -Wextra -O3 -ggdb)
+endif()
